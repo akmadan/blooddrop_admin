@@ -1,3 +1,5 @@
+import 'package:blooddrop_admin/auth/login.dart';
+import 'package:blooddrop_admin/auth/signup.dart';
 import 'package:blooddrop_admin/utils/colors.dart';
 import 'package:blooddrop_admin/utils/constants.dart';
 import 'package:blooddrop_admin/utils/text.dart';
@@ -68,7 +70,10 @@ class _WelcomeState extends State<Welcome> {
                     )),
                     backgroundColor:
                         MaterialStateProperty.all(AppColors.primary)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
                 child: ModifiedText(
                   text: 'Login to Account',
                   color: AppColors.white,
@@ -89,7 +94,10 @@ class _WelcomeState extends State<Welcome> {
                     )),
                     backgroundColor:
                         MaterialStateProperty.all(AppColors.primary)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Register()));
+                },
                 child: ModifiedText(
                   text: 'Create a New Account',
                   color: AppColors.white,

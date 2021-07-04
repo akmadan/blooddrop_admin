@@ -1,3 +1,4 @@
+import 'package:blooddrop_admin/pages/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _CheckState extends State<Check> {
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, usersnapshot) {
               if (usersnapshot.hasData) {
-                return Welcome();
+                return Home();
               } else {
                 return Welcome();
               }

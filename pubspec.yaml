@@ -41,7 +41,7 @@ dev_dependencies:
   firebase_storage: 
   
   
-  geolocator: 
+  geolocator: ^7.0.3
   geocoding:
   url_launcher: 
   
@@ -50,6 +50,7 @@ dev_dependencies:
   permission_handler: 
   image_picker: 
   lottie:
+
   
 
 # For information on the generic Dart part of this file, see the
