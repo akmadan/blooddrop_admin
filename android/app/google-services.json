@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "1076891939969",
+    "project_id": "blooddrop-98c49",
+    "storage_bucket": "blooddrop-98c49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076891939969:android:592a7ba7a394e9178f4980",
+        "android_client_info": {
+          "package_name": "com.company.blooddrop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076891939969-lnbol7aid72c182s2fqhfsc2qv2nhfn1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.blooddrop",
+            "certificate_hash": "957c09effb368786e96e080e3c3aa9ae921cc754"
+          }
+        },
+        {
+          "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7KIKcAK5uALlHndcnDKxrIMQ0K7FqM8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076891939969:android:e857128747ac72af8f4980",
+        "android_client_info": {
+          "package_name": "com.company.blooddrop_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7KIKcAK5uALlHndcnDKxrIMQ0K7FqM8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076891939969-um8jrpej7q0h8vgh4b9gqiivf4f2oam2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
