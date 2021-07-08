@@ -1,9 +1,10 @@
 import 'package:blooddrop_admin/components/addwidgets.dart';
 import 'package:blooddrop_admin/utils/colors.dart';
 import 'package:blooddrop_admin/utils/text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Request extends StatefulWidget {
@@ -17,13 +18,43 @@ class Request extends StatefulWidget {
 class _RequestState extends State<Request> {
   place() async {
     String bg = BloodGroup.bloodgroup;
-    String hospitalname = Hospital.namecontroller.text.toString();
-    String hospitaladdress = Hospital.addresscontroller.text.toString();
+    String bloodbankname = Hospital.namecontroller.text.toString();
+    String bloodbankaddress = Hospital.addresscontroller.text.toString();
     String contact = Contact.phonecontroller.text.toString();
     Position? position = Hospital.currentposition;
     var t = DateTime.now();
     String time = t.toString();
     String doc = time + contact;
+
+    //-----------------------------
+    if (bloodbankname != '' && bloodbankaddress != '' && contact != '') {
+      FirebaseFirestore.instance
+          .collection('bloodbanks')
+          .doc(widget.uid)
+          .collection('requests')
+          .doc(doc)
+          .set({
+        'bg': bg,
+        'doc': doc,
+        'hospitalname': bloodbankname,
+        'hospitaladdress': bloodbankaddress,
+        'contact': contact,
+        'latitude': position!.latitude,
+        'longitude': position.longitude
+      });
+      FirebaseFirestore.instance.collection('allrequests').doc(doc).set({
+        'bg': bg,
+        'doc': doc,
+        'hospitalname': bloodbankname,
+        'hospitaladdress': bloodbankaddress,
+        'contact': contact,
+        'latitude': position.latitude,
+        'longitude': position.longitude
+      });
+      Fluttertoast.showToast(msg: 'Request Placed');
+    } else {
+      Fluttertoast.showToast(msg: 'Information Incomplete');
+    }
   }
 
   @override
@@ -53,7 +84,9 @@ class _RequestState extends State<Request> {
                           borderRadius: BorderRadius.circular(20))),
                       backgroundColor:
                           MaterialStateProperty.all(AppColors.primary)),
-                  onPressed: () {},
+                  onPressed: () {
+                    place();
+                  },
                   child: Center(
                     child: ModifiedText(
                         text: 'Done',

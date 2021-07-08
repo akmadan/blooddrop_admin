@@ -190,6 +190,13 @@ class _HospitalState extends State<Hospital> {
             ),
           ),
         ),
+        SizedBox(height: 20),
+        ModifiedText(
+          color: Colors.black,
+          weight: FontWeight.bold,
+          text: 'Location',
+          size: 24,
+        ),
         SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
@@ -201,7 +208,7 @@ class _HospitalState extends State<Hospital> {
             child: TextField(
               controller: Hospital.addresscontroller,
               cursorColor: Theme.of(context).primaryColor,
-              style: TextStyle(fontFamily: 'SFPro', fontSize: 20),
+              style: TextStyle(fontSize: 20),
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: "Enter Address",
