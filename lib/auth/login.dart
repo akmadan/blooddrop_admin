@@ -45,10 +45,7 @@ class _LoginState extends State<Login> {
       var message = 'An error occured';
       if (err.message != null) {
         message = err.message.toString();
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(message),
-          backgroundColor: Colors.red,
-        ));
+        Fluttertoast.showToast(msg: message);
       }
     } catch (err) {
       print(err);

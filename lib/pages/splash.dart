@@ -6,7 +6,6 @@ import 'dart:async';
 
 import 'package:geolocator/geolocator.dart';
 
-
 import '../check.dart';
 import 'nolocation.dart';
 
@@ -52,18 +51,25 @@ class _SplashScreenState extends State<SplashScreen> {
                 Container(
                   height: 100,
                   width: 100,
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset('assets/logo.png'),
                   decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(25.0),
-                    // image: DecorationImage(
-                    //     image: AssetImage('assets/logo.png'))
                   ),
                 ),
                 SizedBox(height: 15),
                 ModifiedText(
                     weight: FontWeight.bold,
-                    text: 'BloodDrop',
+                    text: 'BloodDrop Admin',
                     color: AppColors.darkgrey,
                     size: 20),
+                SizedBox(height: 5),
+                ModifiedText(
+                    weight: FontWeight.bold,
+                    text: 'Help People Receive Blood',
+                    color: AppColors.darkgrey,
+                    size: 15),
               ],
             ),
           ),
