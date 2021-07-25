@@ -52,7 +52,7 @@ class _EditState extends State<Edit> {
                     await FirebaseFirestore.instance
                         .collection('allrequests')
                         .doc(widget.doc)
-                        .set({
+                        .update({
                       'units': unitscontroller.text,
                       'contact': contactcontroller.text
                     });
@@ -61,7 +61,7 @@ class _EditState extends State<Edit> {
                         .doc(widget.uid)
                         .collection('requests')
                         .doc(widget.doc)
-                        .set({
+                        .update({
                       'units': unitscontroller.text,
                       'contact': contactcontroller.text
                     });
