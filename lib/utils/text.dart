@@ -17,7 +17,7 @@ class ModifiedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style: GoogleFonts.lato(
+        style: GoogleFonts.dmSans(
           color: color,
           fontSize: size,
           fontWeight: weight,

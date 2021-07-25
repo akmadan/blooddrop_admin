@@ -231,6 +231,109 @@ class _HospitalState extends State<Hospital> {
     );
   }
 }
+//
+//
+//
+//
+//
+//
+// -----------------UNITS----------------------
+//
+//
+//
+//
+//
+//
+
+class Units extends StatefulWidget {
+  static TextEditingController unitcontroller = TextEditingController();
+  // static String unit = 'Litre';
+  @override
+  _UnitsState createState() => _UnitsState();
+}
+
+class _UnitsState extends State<Units> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ModifiedText(
+          color: Colors.black,
+          weight: FontWeight.bold,
+          text: 'Available Units',
+          size: 24,
+        ),
+        SizedBox(height: 10),
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade400.withOpacity(0.2),
+                ),
+                padding: EdgeInsets.all(10),
+                height: 70,
+                child: Center(
+                  child: TextField(
+                    maxLength: 10,
+                    keyboardType: TextInputType.phone,
+                    controller: Units.unitcontroller,
+                    cursorColor: Theme.of(context).primaryColor,
+                    style: TextStyle(fontFamily: 'SFPro', fontSize: 20),
+                    decoration: InputDecoration(
+                      counterText: '',
+                      border: InputBorder.none,
+                      hintText: "Enter Available Units",
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 10),
+            // Container(
+            //     padding: EdgeInsets.all(15.0),
+            //     decoration: BoxDecoration(
+            //       color: Colors.grey.shade400.withOpacity(0.2),
+            //     ),
+            //     width: 100,
+            //     height: 60.0,
+            //     child: DropdownButton<String>(
+            //       isExpanded: true,
+            //       value: Units.unit,
+            //       iconSize: 24,
+            //       elevation: 16,
+            //       style: const TextStyle(color: Colors.black),
+            //       underline: Container(
+            //         height: 2,
+            //         color: Colors.transparent,
+            //       ),
+            //       onChanged: (String? newValue) {
+            //         setState(() {
+            //           Units.unit = newValue.toString();
+            //         });
+            //       },
+            //       items: <String>[
+            //         'Litre',
+            //         'ml',
+            //         'units',
+            //       ].map<DropdownMenuItem<String>>((String value) {
+            //         return DropdownMenuItem<String>(
+            //           value: value,
+            //           child: ModifiedText(
+            //               color: Colors.black,
+            //               weight: FontWeight.bold,
+            //               text: value,
+            //               size: 20),
+            //         );
+            //       }).toList(),
+            //     )),
+          ],
+        ),
+      ],
+    );
+  }
+}
 
 //
 //

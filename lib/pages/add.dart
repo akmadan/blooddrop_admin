@@ -21,6 +21,7 @@ class _RequestState extends State<Request> {
     String bloodbankname = Hospital.namecontroller.text.toString();
     String bloodbankaddress = Hospital.addresscontroller.text.toString();
     String contact = Contact.phonecontroller.text.toString();
+    String units = Units.unitcontroller.text.toString();
     Position? position = Hospital.currentposition;
     var t = DateTime.now();
     String time = t.toString();
@@ -40,7 +41,8 @@ class _RequestState extends State<Request> {
         'hospitaladdress': bloodbankaddress,
         'contact': contact,
         'latitude': position!.latitude,
-        'longitude': position.longitude
+        'longitude': position.longitude,
+        'units': units
       });
       FirebaseFirestore.instance.collection('allrequests').doc(doc).set({
         'bg': bg,
@@ -49,7 +51,8 @@ class _RequestState extends State<Request> {
         'hospitaladdress': bloodbankaddress,
         'contact': contact,
         'latitude': position.latitude,
-        'longitude': position.longitude
+        'longitude': position.longitude,
+        'units': units
       });
       Fluttertoast.showToast(msg: 'Request Placed');
     } else {
@@ -67,7 +70,8 @@ class _RequestState extends State<Request> {
           children: [
             SizedBox(height: 20),
             BloodGroup(),
-            Divider(),
+            SizedBox(height: 20),
+            Units(),
             SizedBox(height: 20),
             Hospital(),
             Divider(),
@@ -94,7 +98,8 @@ class _RequestState extends State<Request> {
                         size: 20,
                         weight: FontWeight.bold),
                   )),
-            )
+            ),
+            SizedBox(height: 15),
           ],
         ));
   }
