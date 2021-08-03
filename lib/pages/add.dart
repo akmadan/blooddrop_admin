@@ -42,7 +42,8 @@ class _RequestState extends State<Request> {
         'contact': contact,
         'latitude': position!.latitude,
         'longitude': position.longitude,
-        'units': units
+        'units': units, 
+        'uid':widget.uid
       });
       FirebaseFirestore.instance.collection('allrequests').doc(doc).set({
         'bg': bg,
@@ -52,7 +53,8 @@ class _RequestState extends State<Request> {
         'contact': contact,
         'latitude': position.latitude,
         'longitude': position.longitude,
-        'units': units
+        'units': units, 
+         'uid':widget.uid
       });
       Fluttertoast.showToast(msg: 'Request Placed');
     } else {
